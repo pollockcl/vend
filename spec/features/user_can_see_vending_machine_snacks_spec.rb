@@ -7,11 +7,10 @@ context 'the user visits a vending machine show page' do
     snack1 = vm.snacks.create(name: 'Yummy Gummy', price: 10)
     snack2 = vm.snacks.create(name: 'Dummy Gummy', price: 2)
 
-    visit machine_page(vm)
+    visit machine_path(vm)
     
-    expect(page).to have_content(vm.location)
     expect(page).to have_content(snack1.name)
     expect(page).to have_content(snack2.name)
-    expect(page).to have_content(Snack.average_price)
+    expect(page).to have_content(vm.average_snack_price)
   end
 end
