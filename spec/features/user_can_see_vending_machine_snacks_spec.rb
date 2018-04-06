@@ -9,8 +9,11 @@ context 'the user visits a vending machine show page' do
 
     visit machine_path(vm)
     
+
     expect(page).to have_content(snack1.name)
     expect(page).to have_content(snack2.name)
-    expect(page).to have_content(vm.average_snack_price)
+    expect(page).to have_content('$' + snack1.price.to_s)
+    expect(page).to have_content('$' + snack2.price.to_s)
+    expect(page).to have_content('Average Price: $' + vm.average_snack_price.to_s)
   end
 end
