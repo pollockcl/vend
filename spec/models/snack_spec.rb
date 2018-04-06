@@ -9,7 +9,7 @@ RSpec.describe Snack, type: :model do
       snack = Snack.create(name: 'Rumbly Tumbly', price: 14)
       vm.snacks << snack
       vm2.snacks << snack
-      
+
       expect(snack).to respond_to(:machines)
       expect(snack.machines.size).to eq(2)
     end
