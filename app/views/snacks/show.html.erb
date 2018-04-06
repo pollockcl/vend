@@ -1,0 +1,9 @@
+<%= @snack.name %>
+<%= @snack.price %>
+
+<% @snack.machines.each do |vm| %>
+  <%= vm.average_snack_price %>
+  <%= vm.location %>
+  <%= vm.snacks.size %>
+<% end %>
+

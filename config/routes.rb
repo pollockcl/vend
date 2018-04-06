@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'snacks/show'
+
   root to: "owners#index"
 
   resources :owners do
@@ -6,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :machines, only: [:show]
+
+  resources :snacks, only: [:show]
 end
